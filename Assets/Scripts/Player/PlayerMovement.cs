@@ -92,10 +92,16 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Ground")){
             isJumping=true;
         }
+        if (col.gameObject.CompareTag("Wall")){
+            
+        }
     }
     private void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.CompareTag("Ground")){
             isJumping=false;
+        }
+        if (col.gameObject.CompareTag("Wall")){
+            print("Wall");
         }
     }
     private void Flip(){
